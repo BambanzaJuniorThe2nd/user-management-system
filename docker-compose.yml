@@ -1,0 +1,54 @@
+version: "3"
+
+services:
+  mongo:
+    container_name: usr_mgt_db
+    image: mongo
+    restart: always
+    ports:
+      - "27017:27017"
+    environment:
+      - MONGO_INITDB_DATABASE=usermanagement
+    networks:
+      - usr-mgt-net
+    volumes:
+      - mongo-data:/data/db
+  server:
+    container_name: usr_mgt_server
+    restart: on-failure
+    build:
+      context: ./server
+    ports:
+      - "3000:3000"
+    environment:
+      PORT: 3000
+      DB: "usermanagement"
+      MONGO_URI: mongodb://mongo:27017
+      APP_ENV: "development"
+      JWT_SECRET_KEY: "secret"
+    networks:
+      - usr-mgt-net
+    volumes:
+      - mongo-data:/data/db
+    depends_on:
+      - mongo
+  webapp:
+    container_name: usr_mgt_webapp
+    build:
+      context: ./webapp
+      dockerfile: Dockerfile
+    volumes:
+      - ./webapp:/app
+      - /app/node_modules
+    ports:
+      - '8080:8080'
+    environment:  
+      - CHOKIDAR_USEPOLLING=true
+    depends_on:
+      - server 
+networks:
+  usr-mgt-net:
+    driver: bridge
+volumes:
+  mongo-data:
+    driver: local
