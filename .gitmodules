@@ -1,3 +1,6 @@
 [submodule "server"]
 	path = server
-	url = https://github.com/BambanzaJuniorThe2nd/user-management-system.git
+	url = https://github.com/BambanzaJuniorThe2nd/user-management-server.git
+[submodule "webapp"]
+	path = webapp
+	url = https://github.com/BambanzaJuniorThe2nd/user-management-client.git
