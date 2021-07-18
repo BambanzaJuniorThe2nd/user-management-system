@@ -23,7 +23,7 @@ email: admin@gmail.com
 password: defaultPassword1!
 ```
 
-## Reset a user's password
+## Resetting a user's password
 As an admin, you have the ability to reset another user's password. This entails changing it to a password that only you and the other user would know. For the purpose of demonstrations, this password has been hardcoded as `defaultPassword1@`
 ## Changing one's password
 In addition to resetting other users' passwords as well as yours, you can also specify a password if you don't want to end up with a preset one. You will be given this option when editing your details.
