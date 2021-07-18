@@ -1,5 +1,5 @@
 # User Management System
-A simple user management web app built with go fiber on the backend and Vuejs on the front-end. 
+A simple user management web application built with go fiber on the backend and Vuejs on the front-end. 
 
 The app enables its users to create, update, delete, and fetch users' details. Two types of users are created within the system: Admin and Regular. Only an admin is allowed to carry out the aforementioned functionalities, however. Consequently, access is limited to admin users only.
 
