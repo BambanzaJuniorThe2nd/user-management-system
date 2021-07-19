@@ -16,6 +16,12 @@ To run the app, you will need to have the latest version of docker installed loc
 docker-compose up
 ```
 
+## Accessing the app
+Once the entire app has been built and is now running, launch your favorite web browser and type the following in the address bar to be able to interact with it:
+```
+http://localhost:8080/
+```
+
 ## Logging into the system
 When the app runs for the first time, a default admin user is created to allow the user of the system to gain access. The required credentials are as follows:
 ```
